@@ -42,7 +42,7 @@ in
     ../../programs/nix-index # Nix index configuration
     ../../programs/rofi # Rofi app launcher
     ../../programs/starship # Starship prompt
-    ../../programs/swaylock # (fancy) Swaylock configuration
+    # ../../programs/swaylock # (fancy) Swaylock configuration WARN: Does not work
     # ../../programs/taskwarrior # Taskwarrior configuration
     # ../../programs/zathura # Zathura pdf viewer
     ../../programs/zoxide # Zoxide configuration
@@ -65,8 +65,9 @@ in
   monitors = [
     {
       name = "eDP-1";
+      refreshRate = 59.950;
       width = 1920;
-      height = 1080;
+      height = 1200;
       workspace = "1";
       primary = true;
       x = 1920;
