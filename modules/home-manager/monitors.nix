@@ -30,8 +30,8 @@ in
             example = 1080;
           };
           refreshRate = mkOption {
-            type = types.int;
-            default = 60;
+            type = types.float;
+            default = 60.0;
           };
           scale = mkOption {
             type = types.float;
