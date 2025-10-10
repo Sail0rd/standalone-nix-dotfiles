@@ -5,6 +5,7 @@ with pkgs.stable;
   fastfetch # neofetch replacement
 
   # core languages
+  awscli2 # AWS CLI v2
   go
   lua
   nodejs

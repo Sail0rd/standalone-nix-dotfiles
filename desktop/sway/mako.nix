@@ -10,13 +10,13 @@ in
       padding = "10,20";
       anchor = "top-right";
       width = 400;
-      icon = 1;
+      icons = 1;
       height = 150;
-      borderSize = 2;
-      defaultTimeout = 15 * 1000; # 15s
-      backgroundColor = "#${colors.base00}dd";
-      borderColor = "#${colors.base03}dd";
-      textColor = "#${colors.base05}dd";
+      border-size = 2;
+      default-timeout = 15 * 1000; # 15s
+      background-color = "#${colors.base00}dd";
+      border-color = "#${colors.base03}dd";
+      text-color = "#${colors.base07}";
     };
   };
 }

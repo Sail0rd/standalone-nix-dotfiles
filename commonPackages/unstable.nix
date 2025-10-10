@@ -38,7 +38,7 @@ with pkgs;
   # Tools
   trivy # vulnerability scanner
   gh # GitHub CLI
-  awscli2 # AWS CLI v2
+  # awscli2 # AWS CLI v2
   fluxcd # GitOps for Kubernetes
   talosctl # Talos OS CLI
   kind # Kubernetes in Docker
