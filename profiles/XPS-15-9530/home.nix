@@ -93,6 +93,17 @@ in
     }
   ];
 
+  # Git config specific to this profile (signing, etc)
+  programs.git = {
+    signing = {
+      key = "3F3207C8D88C3ACC1E91A8C9E38C93040B06B56B";
+      # signByDefault = false; # I only want to sign commits, not tags
+    };
+    extraConfig = {
+      commit.gpgsign = true;
+    };
+  };
+
   colorScheme = inputs.nix-colors.colorSchemes.material-palenight;
 
   home = {

@@ -1,0 +1,39 @@
+#!/bin/bash
+
+set -e
+
+[ "$SKIP_PREPARE_COMMIT_MSG-0" -eq "1" ] && exit 0
+
+COMMIT_MSG_FILE="$1"
+COMMIT_SOURCE="$2"
+
+BRANCH="$(git symbolic-ref --short -q HEAD || echo)"
+
+if [ "$BRANCH" = "" ]; then
+    # could not retrieve branch (e.g. detached head on rebase)
+    # abort to avoid any error later on
+    exit 0
+fi
+
+# MacOS users: install gsed/gnu-sed
+command -v gsed >/dev/null && SED='gsed' || SED='sed'
+
+# git commit (but not git commit --amend)
+if [ "$COMMIT_SOURCE" = "" ] && [ -f "$COMMIT_MSG_FILE" ]; then
+    pattern='^\([a-zA-Z]\+\)-\([0-9]\+\)_.*$'
+    msg=$(echo "$BRANCH" | $SED -n "/$pattern/{s~$pattern~\U\1-\2 ~; p}")
+    $SED -i "1s~^.*$~$msg\n~" "$COMMIT_MSG_FILE"
+fi
+
+# git merge
+if [ "$COMMIT_SOURCE" = 'merge' ]; then
+    pattern="^.*branch '\(\(remotes/\)\?origin/\)\?\([^']*\)'.*$"
+    if [[ "$BRANCH" == merge_*_to_* ]]; then
+        real_target="$(echo $BRANCH | sed 's~merge_.*_to_\(.*\)~\1~g')"
+        replace="Merge '\3' into $real_target"
+    else
+        replace="Merge PR #XXXX from branch '\3' into $BRANCH"
+        replace="$replace"'\n#          ^^^^\n#    /!\\ FIXME'
+    fi
+    $SED -i "1s~$pattern~$replace~" "$COMMIT_MSG_FILE"
+fi

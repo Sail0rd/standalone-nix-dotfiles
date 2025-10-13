@@ -5,17 +5,17 @@
   user,
   pkgs,
   ...
-}: {
+}:
+{
   programs.fish = {
     enable = true;
-    interactiveShellInit =
-      ''
-        fish_vi_key_bindings &&
-        ${pkgs.starship}/bin/starship init fish | source
-      ''
-      + lib.strings.optionalString config.programs.taskwarrior.enable ''
-        task list
-      '';
+    interactiveShellInit = ''
+      fish_vi_key_bindings &&
+      ${pkgs.starship}/bin/starship init fish | source
+    ''
+    + lib.strings.optionalString config.programs.taskwarrior.enable ''
+      task list
+    '';
 
     shellAbbrs = {
       # Nix
@@ -118,7 +118,8 @@
       kcfguc = "kubectl config use-context";
 
       kns = "kubens";
-      kc = "kubectx";
+      kctx = "kubectx";
+      kc = "kconf";
 
       # Other
       cat = "bat -p";
