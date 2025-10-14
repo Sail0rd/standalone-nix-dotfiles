@@ -34,6 +34,7 @@ in
     ../../programs/alacritty # Alacritty terminal configuration
     ../../programs/kitty # Kitty terminal configuration
     ../../programs/direnv # Direnv configuration
+    ../../programs/flameshot # screenshot utility
     ../../programs/fish # Fish shell
     ../../programs/fzf # Fzf configuration
     ../../programs/git # Git user configuration

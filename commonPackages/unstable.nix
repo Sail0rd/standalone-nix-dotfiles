@@ -42,6 +42,8 @@ with pkgs;
   fluxcd # GitOps for Kubernetes
   talosctl # Talos OS CLI
   kind # Kubernetes in Docker
+  sshs # ssh
+  postgresql
 
   # Kubernetes
   k9s

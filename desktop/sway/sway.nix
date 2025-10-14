@@ -15,6 +15,7 @@ let
 
   # Packages
   grimCmd = "${lib.getExe pkgs.grim}";
+  flameshotCmd = "QT_QPA_PLATFORM=xcb ${lib.getExe pkgs.flameshot}"; # workaround found in https://github.com/flameshot-org/flameshot/issues/2364
   kittyCmd = "${lib.getExe pkgs.kitty}";
   rofiCmd = "${lib.getExe pkgs.rofi}";
   slurpCmd = "${lib.getExe pkgs.slurp}";
@@ -99,7 +100,8 @@ in
           "${mod}+Return" = "exec ${kittyCmd}";
           "${mod}+d" = "exec ${dmenu}";
           "Print" = "exec ${screenshot}";
-          "${mod}+Shift+s" = "exec ${screenshot}";
+          # "${mod}+Shift+s" = "exec ${screenshot}";
+          "${mod}+Shift+s" = "exec ${flameshotCmd} gui";
           "${mod}+x" = "exec swaylock --image ${self}/assets/cube.jpg";
 
           # Brightness
@@ -197,7 +199,7 @@ in
     config = {
       sway = {
         default = [
-          "sway"
+          "wlr"
           "gtk"
         ];
       };
