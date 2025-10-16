@@ -239,8 +239,8 @@
             max-length = 30;
             format = "{icon} {text}";
             format-icons = {
-              "Playing" = "󰐊";
-              "Paused" = "󰏤 ";
+              "Playing" = "󰏤";
+              "Paused" = "󰐊";
               "Stopped" = "󰓛";
             };
             on-click = "${playerctl} play-pause";
