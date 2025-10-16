@@ -48,6 +48,8 @@ in
     # ../../programs/zathura # Zathura pdf viewer
     ../../programs/zoxide # Zoxide configuration
 
+    ../../packages/helm.nix
+
     ../../services/podman # Podman configuration
   ];
 

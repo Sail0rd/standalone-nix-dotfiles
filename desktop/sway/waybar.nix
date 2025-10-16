@@ -66,16 +66,17 @@
           modules-left = [
             "sway/workspaces"
             "sway/mode"
+            "custom/currentplayer"
+            "custom/player"
           ];
           modules-center = [
-            "cpu"
-            "memory"
             "clock"
           ];
           modules-right = [
+            "cpu"
+            "memory"
             "custom/menu"
-            "custom/currentplayer"
-            "custom/player"
+            "backlight"
             "network"
             "pulseaudio"
             "battery"
@@ -109,6 +110,16 @@
 
           "sway/mode" = {
             format = "<span style=\"italic\">{}</span>";
+          };
+
+          "backlight" = {
+            device = "{icon} {percent: >3}%";
+            format = "{percent}% {icon}";
+            format-icons = [
+              "󰃞 "
+              "󰃟 "
+              "󰃠 "
+            ];
           };
 
           clock = {
@@ -325,6 +336,21 @@
             margin-top: 0;
             margin-bottom: 0;
             border-radius: 10px;
+          }
+          #custom-currentplayer {
+            background-color: #${colors.base0C};
+            color: #${colors.base00};
+            border-radius: 10px 0 0 10px; /* round left side */
+            margin-left: 50px;
+            padding-right: 5px;
+          }
+
+          #custom-player {
+            background-color: #${colors.base0C};
+            color: #${colors.base00};
+            border-radius: 0 10px 10px 0; /* round right side */
+            margin-left: 0;
+            padding-left: 5px;
           }
           #tray {
             color: #${colors.base05};

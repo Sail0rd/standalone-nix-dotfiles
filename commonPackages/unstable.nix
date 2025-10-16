@@ -29,6 +29,8 @@ with pkgs;
   yq-go # YAML processor
   zip # zip utility
 
+  postgresql
+
   # git extensions
   git-crypt
   pre-commit
@@ -43,7 +45,6 @@ with pkgs;
   talosctl # Talos OS CLI
   kind # Kubernetes in Docker
   sshs # ssh
-  postgresql
 
   # Kubernetes
   k9s
@@ -62,4 +63,5 @@ with pkgs;
   # Test / Fun
   kcl # Kubernetes Configuration Language
   jujutsu # easier git
+  opentofu # opensource terraform
 ]
