@@ -148,7 +148,7 @@
               default = [
                 ""
                 ""
-                ""
+                " "
               ];
             };
             on-click = "${pavucontrol}";
@@ -321,7 +321,7 @@
             color: #${colors.base00};
             padding-left: 15px;
             padding-right: 22px;
-            margin-left: 0;
+            margin-left: 10px;
             margin-right: 10px;
             margin-top: 0;
             margin-bottom: 0;

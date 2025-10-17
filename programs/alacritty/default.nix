@@ -12,11 +12,11 @@ in
     enable = true;
 
     settings = {
-      live_config_reload = true;
+      general.live_config_reload = true;
 
       window = {
         title = "Terminal";
-        opacity = 0.8;
+        opacity = 0.9;
       };
 
       # TODO: change this with a fontProfiles
@@ -28,7 +28,7 @@ in
 
       cursor.style = "Underline";
 
-      shell = {
+      terminal.shell = {
         program = "${pkgs.fish}/bin/fish";
         # args = [ "--init-command" "echo; neofetch; echo" ];
       };
