@@ -102,7 +102,7 @@ in
       key = "3F3207C8D88C3ACC1E91A8C9E38C93040B06B56B";
       # signByDefault = false; # I only want to sign commits, not tags
     };
-    extraConfig = {
+    settings = {
       commit.gpgsign = true;
     };
   };

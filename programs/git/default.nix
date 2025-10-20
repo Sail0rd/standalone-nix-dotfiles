@@ -7,21 +7,27 @@
   ...
 }:
 {
-  programs.git = {
+  programs.delta = {
     enable = true;
-    package = pkgs.git;
-    delta.enable = true;
-    delta.options = {
+    enableGitIntegration = true;
+    options = {
       line-numbers = true;
       side-by-side = true;
       navigate = true;
     };
+  };
+  programs.git = {
+    enable = true;
+    package = pkgs.git;
     hooks = {
       prepare-commit-msg = "${self}/programs/git/hooks/prepare-commit-msg";
     };
-    userEmail = "${email}";
-    userName = "${user}";
-    extraConfig = {
+
+    settings = {
+      user = {
+        email = "${email}";
+        name = "${user}";
+      };
       push = {
         default = "current";
         autoSetupRemote = true;
