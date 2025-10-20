@@ -17,6 +17,7 @@ let
   grimCmd = "${lib.getExe pkgs.grim}";
   flameshotCmd = "QT_QPA_PLATFORM=xcb ${lib.getExe pkgs.flameshot}"; # workaround found in https://github.com/flameshot-org/flameshot/issues/2364
   kittyCmd = "${lib.getExe pkgs.kitty}";
+  alacrittyCmd = "${lib.getExe pkgs.alacritty}";
   rofiCmd = "${lib.getExe pkgs.rofi}";
   slurpCmd = "${lib.getExe pkgs.slurp}";
   brightnessctlCmd = "${lib.getExe pkgs.brightnessctl}";
@@ -56,7 +57,7 @@ in
 
     config = {
       modifier = "Mod4"; # $mod -> SUPER
-      terminal = "${kittyCmd}";
+      terminal = "${alacrittyCmd}";
       menu = dmenu;
 
       startup = [
@@ -97,7 +98,7 @@ in
         in
         lib.mkOptionDefault {
           # Applications
-          "${mod}+Return" = "exec ${kittyCmd}";
+          "${mod}+Return" = "exec ${alacrittyCmd}";
           "${mod}+d" = "exec ${dmenu}";
           "Print" = "exec ${screenshot}";
           # "${mod}+Shift+s" = "exec ${screenshot}";

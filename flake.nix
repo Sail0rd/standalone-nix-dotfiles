@@ -43,6 +43,7 @@
               inherit (prev) system;
               config = prev.config;
             };
+            minicava = prev.callPackage ./packages/minicava.nix; # add minicava to pkgs attribute
           })
         ];
       };

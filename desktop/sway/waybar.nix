@@ -22,7 +22,8 @@
 
       playerctl = "${pkgs.playerctl}/bin/playerctl";
       playerctld = "${pkgs.playerctl}/bin/playerctld";
-      terminal = "${pkgs.kitty}/bin/kitty";
+      # terminal = "${pkgs.kitty}/bin/kitty";
+      terminal = "${lib.getExe pkgs.alacritty}";
       terminal-spawn = cmd: "${terminal} $SHELL -i -c ${cmd}";
       jsonOutput =
         name:
@@ -66,6 +67,7 @@
           modules-left = [
             "sway/workspaces"
             "sway/mode"
+            "custom/separator"
             "custom/currentplayer"
             "custom/player"
           ];
@@ -83,6 +85,13 @@
             "tray"
             "custom/hostname"
           ];
+
+          "custom/separator" = {
+            return-type = "text";
+            interval = "once";
+            format = "|";
+            tooltip = false;
+          };
 
           "wlr/workspaces" = {
             on-click = "activate";
@@ -338,20 +347,21 @@
             border-radius: 10px;
           }
           #custom-currentplayer {
-            background-color: #${colors.base0C};
-            color: #${colors.base00};
-            border-radius: 10px 0 0 10px; /* round left side */
-            margin-left: 50px;
+            margin-left: 0;
             padding-right: 5px;
           }
 
           #custom-player {
-            background-color: #${colors.base0C};
-            color: #${colors.base00};
-            border-radius: 0 10px 10px 0; /* round right side */
             margin-left: 0;
             padding-left: 5px;
           }
+
+          #custom-separator {
+            color: #${colors.base03};
+            padding: 0 6px;
+            font-weight: bold;
+          }
+
           #tray {
             color: #${colors.base05};
           }
