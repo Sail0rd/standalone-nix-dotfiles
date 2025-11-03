@@ -15,8 +15,8 @@ let
     ++ (with pkgs; [
       # System
       spotify # Music Player
-      discord # Chat
-
+      # discord # Chat
+      teleport_18
     ]);
 
   stablePkgs = import ../../commonPackages/stable.nix { inherit pkgs; };
@@ -44,13 +44,14 @@ in
     ../../programs/rofi # Rofi app launcher
     ../../programs/starship # Starship prompt
     # ../../programs/swaylock # (fancy) Swaylock configuration WARN: Does not work
-    # ../../programs/taskwarrior # Taskwarrior configuration
+    ../../programs/taskwarrior # Taskwarrior configuration
     # ../../programs/zathura # Zathura pdf viewer
     ../../programs/zoxide # Zoxide configuration
 
     ../../packages/helm.nix
 
     ../../services/podman # Podman configuration
+    # ../../services/trackwarrior # trackwarrior configuration
   ];
 
   fontProfiles = {

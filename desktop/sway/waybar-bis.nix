@@ -73,11 +73,11 @@ in
     systemd.enable = true;
     settings = {
       primary = {
-        exclusive = false;
+        # exclusive = false;
         passthrough = false;
         layer = "top";
-        height = 40;
-        margin = "6";
+        height = 25;
+        margin = "4";
         position = "top";
         modules-left = [
           "custom/menu"
@@ -95,14 +95,35 @@ in
           "custom/player"
         ];
 
+        modules-center = [
+          "clock"
+        ];
+
         modules-right = [
           "tray"
           "network"
           "custom/rfkill"
           "battery"
           "pulseaudio"
-          "clock"
         ];
+
+        "sway/workspaces" = {
+          format = "{icon}";
+          all-outputs = false;
+          disable-scroll = false;
+          persistent-workspaces = { };
+          on-click = "focus";
+          on-scroll-up = "swaymsg workspace next";
+          on-scroll-down = "swaymsg workspace prev";
+          format-icons = {
+            "1" = " ";
+            "2" = "";
+            "3" = " ";
+            "4" = " ";
+            "5" = " ";
+            urgent = "";
+          };
+        };
 
         clock = {
           format = "{:%H:%M %d/%m}";
@@ -245,8 +266,8 @@ in
           max-length = 30;
           format = "{icon} {text}";
           format-icons = {
-            "Playing" = "󰐊";
-            "Paused" = "󰏤 ";
+            "Playing" = "󰏤 ";
+            "Paused" = "󰐊";
             "Stopped" = "󰓛";
           };
           on-click = mkScript {

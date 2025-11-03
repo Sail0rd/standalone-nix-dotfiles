@@ -83,6 +83,12 @@ in
       };
 
       input = {
+        # "type:keyboard" = {
+        #   xkb_file = "${self}/assets/ergol.xkb_keymap";
+        # };
+        # "type:keyboard" = {
+        #   xkb_file = "${self}/assets/colemkft.xkb_keymap";
+        # };
         "*" = {
           xkb_layout = "us";
           xkb_variant = "colemak";
