@@ -45,6 +45,7 @@ in
     ../../programs/starship # Starship prompt
     # ../../programs/swaylock # (fancy) Swaylock configuration WARN: Does not work
     ../../programs/taskwarrior # Taskwarrior configuration
+    ../../programs/tmux # Tmux configuration
     # ../../programs/zathura # Zathura pdf viewer
     ../../programs/zoxide # Zoxide configuration
 

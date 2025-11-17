@@ -1,0 +1,50 @@
+#!/bin/bash
+
+remote_name="$1"
+remote_url="$2"
+
+# Fetch the remote state silently so we know the latest commit on the remote
+git fetch "$remote_name" --quiet
+
+# Read refs from stdin (provided by git)
+while read local_ref local_sha remote_ref remote_sha; do
+    # Only check tag pushes
+    if [[ "$local_ref" =~ ^refs/tags/ ]]; then
+        tag_name="${local_ref#refs/tags/}"
+
+        echo "Detected tag push: $tag_name"
+
+        # Commit the tag points to
+        tag_commit=$(git rev-list -n 1 "$tag_name")
+
+        # Detect the remote branch that HEAD tracks
+        branch=$(git rev-parse --abbrev-ref HEAD)
+        remote_branch="${remote_name}/${branch}"
+
+        # Latest commit on the remote branch
+        remote_latest=$(git rev-parse "$remote_branch" 2>/dev/null)
+
+        if [[ -z "$remote_latest" ]]; then
+            echo "⚠️ Could not determine remote branch state. Continuing..."
+            continue
+        fi
+
+        if [[ "$tag_commit" != "$remote_latest" ]]; then
+            echo
+            echo "⚠️  Tag '$tag_name' does NOT point to the latest commit on remote '$remote_branch'!"
+            echo "Tag commit:      $tag_commit"
+            echo "Remote HEAD:     $remote_latest"
+            echo
+
+            read -p "Do you still want to push this tag? (y/N): " confirm
+
+            if [[ "$confirm" != "y" && "$confirm" != "Y" ]]; then
+                echo "Push aborted."
+                exit 1
+            fi
+        fi
+    fi
+done
+
+exit 0
+
