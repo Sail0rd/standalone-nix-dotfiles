@@ -21,7 +21,7 @@
     package = pkgs.git;
     hooks = {
       prepare-commit-msg = "${self}/programs/git/hooks/prepare-commit-msg";
-      pre-push = "${self}/programs/git/hooks/pre-push";
+      # pre-push = "${self}/programs/git/hooks/pre-push";
     };
 
     settings = {

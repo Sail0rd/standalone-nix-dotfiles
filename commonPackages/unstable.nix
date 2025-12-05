@@ -6,7 +6,7 @@ with pkgs;
   curl # HTTP cli client
   dive # Docker image explorer
   doggo # better dig
-  du-dust # prettier du
+  dust # prettier du
   duf # prettier df
   fd # easier find
   fx # Terminal JSON viewer
