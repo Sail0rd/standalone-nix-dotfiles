@@ -57,7 +57,7 @@ in
 
     config = {
       modifier = "Mod4"; # $mod -> SUPER
-      terminal = "${alacrittyCmd}";
+      terminal = "${kittyCmd}";
       menu = dmenu;
 
       startup = [
@@ -83,16 +83,16 @@ in
       };
 
       input = {
-        "type:keyboard" = {
-          xkb_file = "${self}/assets/ergol.xkb_keymap";
-        };
+        # "type:keyboard" = {
+        #   xkb_file = "${self}/assets/ergol.xkb_keymap";
+        # };
         # "type:keyboard" = {
         #   xkb_file = "${self}/assets/colemkft.xkb_keymap";
         # };
-        # "*" = {
-        #   xkb_layout = "us";
-        #   xkb_variant = "colemak";
-        # };
+        "*" = {
+          xkb_layout = "fr";
+          xkb_variant = "ergol";
+        };
       };
 
       focus.followMouse = "yes";
@@ -104,7 +104,7 @@ in
         in
         lib.mkOptionDefault {
           # Applications
-          "${mod}+Return" = "exec ${alacrittyCmd}";
+          "${mod}+Return" = "exec ${kittyCmd}";
           "${mod}+d" = "exec ${dmenu}";
           "Print" = "exec ${screenshot}";
           # "${mod}+Shift+s" = "exec ${screenshot}";

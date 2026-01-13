@@ -48,6 +48,7 @@
       kgj = "kubectl get job";
       kgsvc = "kubectl get svc -o wide";
       kgn = "kubectl get no -o wide";
+      kgins = "kubectl get ingress";
       kgr = "kubectl get roles";
       kgrb = "kubectl get rolebindings";
       kgcr = "kubectl get clusterroles";
@@ -118,8 +119,8 @@
       kcfguc = "kubectl config use-context";
 
       kns = "kubens";
-      kctx = "kubectx";
-      kc = "kconf";
+      kc = "kubectx";
+      # kc = "kconf";
 
       # Other
       cat = "bat -p";

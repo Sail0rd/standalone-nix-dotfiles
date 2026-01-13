@@ -32,6 +32,7 @@ in
 
     # ../../programs/jeezyvim # Neovim portable configuration
     ../../programs/alacritty # Alacritty terminal configuration
+    ../../programs/k9s # K9s kubernetes visualizer configuration
     ../../programs/kitty # Kitty terminal configuration
     ../../programs/direnv # Direnv configuration
     ../../programs/flameshot # screenshot utility

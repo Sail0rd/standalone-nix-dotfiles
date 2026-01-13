@@ -47,7 +47,6 @@ with pkgs;
   sshs # ssh
 
   # Kubernetes
-  k9s
   kubectl
   kubectl-cnpg # CNPG management plugin
   kubectl-ktop # Top for kube cluster
