@@ -1,10 +1,11 @@
 { ... }:
 {
   imports = [
+    ./dms.nix
     ./kanshi.nix
-    ./mako.nix
+    # ./mako.nix
     ./sway.nix
-    ./waybar.nix
+    # ./waybar.nix
     # ./waybar-bis.nix
   ];
 }

@@ -35,7 +35,7 @@ in
     ../../programs/k9s # K9s kubernetes visualizer configuration
     ../../programs/kitty # Kitty terminal configuration
     ../../programs/direnv # Direnv configuration
-    ../../programs/flameshot # screenshot utility
+    # ../../programs/flameshot # screenshot utility
     ../../programs/fish # Fish shell
     ../../programs/fzf # Fzf configuration
     ../../programs/git # Git user configuration

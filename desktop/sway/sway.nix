@@ -3,6 +3,7 @@
   lib,
   self,
   config,
+  inputs,
   ...
 }:
 
@@ -24,11 +25,16 @@ let
   playerctlCmd = "${lib.getExe pkgs.playerctl}";
   wl-copyCmd = "${pkgs.wl-clipboard}/bin/wl-copy";
   wl-pasteCmd = "${pkgs.wl-clipboard}/bin/wl-paste";
+  dmsCmd = "${lib.getExe inputs.dms.packages.${pkgs.system}.dms-shell}";
 
   # Screenshot command for Sway
-  screenshot = "${grimCmd} -g \"$(${slurpCmd})\" - | ${wl-copyCmd}";
+  # screenshot = "${grimCmd} -g \"$(${slurpCmd})\" - | ${wl-copyCmd}";
+  screenshot = "${dmsCmd} screenshot --no-file --no-notify";
 
-  dmenu = "${rofiCmd} -modi drun -show drun -show-icons";
+  # dmenu = "${rofiCmd} -modi drun -show drun -show-icons";
+  dmenu = "${dmsCmd} ipc call spotlight open";
+
+  colorPicker = "${dmsCmd} color pick";
 in
 {
   home.packages = with pkgs; [
@@ -63,6 +69,7 @@ in
       startup = [
         { command = "${lib.getExe pkgs.swaybg} -i ${wallpaper}"; }
         { command = "${lib.getExe pkgs.kanshi}"; }
+        { command = "dms run --session"; }
         # { command = "${lib.getExe pkgs.waybar}"; } # Uncomment if using Waybar
       ];
 
@@ -107,8 +114,8 @@ in
           "${mod}+Return" = "exec ${kittyCmd}";
           "${mod}+d" = "exec ${dmenu}";
           "Print" = "exec ${screenshot}";
-          # "${mod}+Shift+s" = "exec ${screenshot}";
-          "${mod}+Shift+s" = "exec ${flameshotCmd} gui";
+          "${mod}+Shift+s" = "exec ${screenshot}";
+          # "${mod}+Shift+s" = "exec ${flameshotCmd} gui";
           "${mod}+x" = "exec swaylock --image ${self}/assets/cube.jpg";
 
           # Brightness

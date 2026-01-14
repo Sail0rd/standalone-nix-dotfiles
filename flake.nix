@@ -18,6 +18,9 @@
 
     jeezyvim.url = "github:Sail0rd/JeezyVim";
     nix-colors.url = "github:misterio77/nix-colors";
+
+    dms.url = "github:AvengeMedia/DankMaterialShell/stable";
+    dms.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -97,6 +100,7 @@
             hyprland.homeManagerModules.default
             nix-index-database.homeModules.nix-index
             nix-colors.homeManagerModules.default
+            dms.homeModules.dankMaterialShell.default
           ];
         };
       };
