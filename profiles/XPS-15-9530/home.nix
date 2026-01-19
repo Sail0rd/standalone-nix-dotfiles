@@ -31,6 +31,7 @@ in
     ../../modules/home-manager/fonts.nix # Font configuration
 
     # ../../programs/jeezyvim # Neovim portable configuration
+    ../../programs/atuin # shell history synchronization
     ../../programs/alacritty # Alacritty terminal configuration
     ../../programs/k9s # K9s kubernetes visualizer configuration
     ../../programs/kitty # Kitty terminal configuration
@@ -85,8 +86,8 @@ in
       height = 1080;
       workspace = "2";
       primary = false;
-      x = 1920;
-      y = 0;
+      x = 0;
+      y = 520;
     }
     {
       name = "DP-3";
@@ -94,8 +95,8 @@ in
       height = 1080;
       workspace = "3";
       primary = false;
-      x = 0;
-      y = 520;
+      x = 1920;
+      y = 0;
     }
   ];
 
