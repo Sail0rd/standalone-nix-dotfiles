@@ -50,6 +50,7 @@ in
     ../../programs/tmux # Tmux configuration
     # ../../programs/zathura # Zathura pdf viewer
     ../../programs/zoxide # Zoxide configuration
+    ../../programs/zen-browser # Zen web browser
 
     ../../packages/helm.nix
 
