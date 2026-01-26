@@ -2,9 +2,10 @@
 {
   imports = [
     ./hyprland.nix
-    ./mako.nix
+    # ./mako.nix
     ./kanshi.nix
-    ./waybar.nix
-    ./swayidle.nix
+    # ./waybar.nix
+    # ./swayidle.nix
+    ./dms.nix
   ];
 }

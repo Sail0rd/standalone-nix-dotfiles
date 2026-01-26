@@ -22,8 +22,15 @@
     dms.url = "github:AvengeMedia/DankMaterialShell/stable";
     dms.inputs.nixpkgs.follows = "nixpkgs";
 
-    zen-browser.url = "github:youwen5/zen-browser-flake";
-    zen-browser.inputs.nixpkgs.follows = "nixpkgs";
+    # zen-browser.url = "github:youwen5/zen-browser-flake";
+    # zen-browser.inputs.nixpkgs.follows = "nixpkgs";
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+      };
+    };
   };
 
   outputs =
@@ -49,7 +56,6 @@
               inherit (prev) system;
               config = prev.config;
             };
-            minicava = prev.callPackage ./packages/minicava.nix; # add minicava to pkgs attribute
           })
         ];
       };
@@ -101,9 +107,10 @@
           email = "mguilbaud@hackuity.io";
           modules = [
             hyprland.homeManagerModules.default
-            nix-index-database.homeModules.nix-index
             nix-colors.homeManagerModules.default
+            nix-index-database.homeModules.nix-index
             dms.homeModules.dankMaterialShell.default
+            zen-browser.homeModules.default
           ];
         };
       };

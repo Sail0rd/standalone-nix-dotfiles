@@ -29,6 +29,7 @@ in
 
     ../../modules/home-manager/monitors.nix # Monitor configuration
     ../../modules/home-manager/fonts.nix # Font configuration
+    ../../modules/home-manager/nixGL.nix # NixGL configuration
 
     # ../../programs/jeezyvim # Neovim portable configuration
     ../../programs/atuin # shell history synchronization
@@ -57,6 +58,11 @@ in
     ../../services/podman # Podman configuration
     # ../../services/trackwarrior # trackwarrior configuration
   ];
+
+  nixGLWrap = {
+    enable = true;
+    prefix = "${pkgs.nixgl.nixGLMesa}/bin/nixGLMesa";
+  };
 
   fontProfiles = {
     enable = true;

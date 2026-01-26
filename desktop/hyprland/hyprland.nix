@@ -6,12 +6,12 @@
 }:
 let
   # Packages
-  hyprshot = "${lib.getExe pkgs.hyprshot}";
+  # hyprshot = "${lib.getExe pkgs.hyprshot}";
   # hyprlock = "${lib.getExe pkgs.hyprlock}";
-  grim = "${lib.getExe pkgs.grim}";
+  # grim = "${lib.getExe pkgs.grim}";
   kitty = "${lib.getExe pkgs.kitty}";
   rofi = "${lib.getExe pkgs.rofi}";
-  slurp = "${lib.getExe pkgs.slurp}";
+  # slurp = "${lib.getExe pkgs.slurp}";
   brightnessctl = "${lib.getExe pkgs.brightnessctl}";
   playerctl = "${lib.getExe pkgs.playerctl}";
   wl-copy = "${pkgs.wl-clipboard}/bin/wl-copy"; # wl-clipboard expose multiple binaries
@@ -20,15 +20,17 @@ let
   applicationsShortcut =
     let
       term = "${kitty}";
-      dmenu = "${rofi} -modi drun -show drun -show-icons";
-      screenshot = "${hyprshot} -m region --freeze --output-folder ~/Pictures/";
+      # dmenu = "${rofi} -modi drun -show drun -show-icons";
+      dmenu = "dms ipc call spotlight open";
+      # screenshot = "${hyprshot} -m region --freeze --output-folder ~/Pictures/";
+      screenshot = "dms screenshot";
     in
     ''
       bind = $mod, Return, exec, ${term}
       bind = $mod, D, exec, ${dmenu}
       bind = , PRINT, exec, ${screenshot}
       bind = $mod SHIFT, S, exec, ${screenshot}
-      bind = $mod, X, exec, swaylock --image ${self}/assets/cube.jpg
+      # bind = $mod, X, exec, swaylock --image ${self}/assets/cube.jpg
 
       binde = , XF86MonBrightnessDown, exec, ${brightnessctl} set 5%-
       binde = , XF86MonBrightnessUp, exec, ${brightnessctl} set 5%+
@@ -48,7 +50,6 @@ let
     bind = $mod SHIFT, E, exec, ${rofi} -show drun
     bind = $mod, P, togglefloating,
     bind = $mod, Enter, exec, ${kitty}
-    # bind = $mod Shift, S, exec, ${grim} -g \"$(slurp)\"
     bind = $mod, F, fullscreen
 
     # Move focus
