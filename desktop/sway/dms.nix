@@ -1,6 +1,6 @@
 { pkgs, config, ... }:
 {
-  programs.dankMaterialShell = {
+  programs.dank-material-shell = {
     enable = true;
 
     # quickshell.package = pkgs.quickshell;
@@ -12,8 +12,8 @@
 
     # Core features
     enableSystemMonitoring = true; # System monitoring widgets (dgop)
-    enableClipboard = true; # Clipboard history manager
-    enableColorPicker = true; # Color picker widget
+    # enableClipboard = true; # Clipboard history manager
+    # enableColorPicker = true; # Color picker widget
     enableVPN = true; # VPN management widget
     enableDynamicTheming = true; # Wallpaper-based theming (matugen)
     enableAudioWavelength = true; # Audio visualizer (cava)

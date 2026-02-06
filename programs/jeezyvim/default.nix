@@ -15,6 +15,9 @@ with pkgs;
       #     };
       #   };
       # };
+      treesitter = {
+        highlight.enable = false;
+      };
       none-ls = {
         sources = {
           diagnostics.sqruff = {
@@ -26,10 +29,10 @@ with pkgs;
               ];
             };
           };
-          formatting = {
-            shfmt.enable = false;
-            terraform_fmt.enable = false;
-          };
+          # formatting = {
+          #   shfmt.enable = false;
+          #   terraform_fmt.enable = false;
+          # };
         };
       };
       # copilot-vim = {

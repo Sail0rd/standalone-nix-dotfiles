@@ -229,7 +229,7 @@
       };
 
       get-suspended-helmreleases = {
-        shortCut = "Shift-S";
+        shortCut = "Shift-E";
         confirm = false;
         description = "Suspended Helm Releases";
         scopes = [ "helmrelease" ];
@@ -246,7 +246,7 @@
       };
 
       get-suspended-kustomizations = {
-        shortCut = "Shift-S";
+        shortCut = "Shift-E";
         confirm = false;
         description = "Suspended Kustomizations";
         scopes = [ "kustomizations" ];

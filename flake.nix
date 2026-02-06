@@ -6,7 +6,7 @@
     nixGL.inputs.nixpkgs.follows = "nixpkgs";
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05"; # Use a current stable release
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11"; # Use a current stable release
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -53,8 +53,8 @@
           # This allow to reference pkgs.stable to install package from stable channel
           (final: prev: {
             stable = import nixpkgs-stable {
-              inherit (prev) system;
-              config = prev.config;
+              system = final.system;
+              config.allowUnfree = true;
             };
           })
         ];
@@ -106,10 +106,10 @@
           user = "mathis";
           email = "mguilbaud@hackuity.io";
           modules = [
-            hyprland.homeManagerModules.default
+            # hyprland.homeManagerModules.default
             nix-colors.homeManagerModules.default
             nix-index-database.homeModules.nix-index
-            dms.homeModules.dankMaterialShell.default
+            dms.homeModules.dank-material-shell
             zen-browser.homeModules.default
           ];
         };

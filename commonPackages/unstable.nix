@@ -51,6 +51,14 @@ with pkgs;
   kubectl-cnpg # CNPG management plugin
   kubectl-ktop # Top for kube cluster
   kubectl-explore # better kubectl explain
+  kubectl-node-shell # kubectl shelonn nodes
+  kubectl-tree # kubectl tree for resources
+  kubectl-klock # pretty watch for k8s
+  kubectl-images # kubectl images used
+  kubectl-view-secret # decoded view for k8s secrets
+  kubectl-view-allocations # kubectl view for k8s resource allocations
+  kubectl-evict-pod # pod eviction for k8s
+  kubectl-df-pv
   kubectx
   kubesec
   kubeconform

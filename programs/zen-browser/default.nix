@@ -51,6 +51,25 @@ in
             position = 1000;
             container = containers.Work.id;
           };
+          "Nix" = {
+            id = "2441acc9-79b1-4afb-b582-ee88ce554ec0";
+            icon = "❄️";
+            position = 3000;
+            theme = {
+              type = "gradient";
+              colors = [
+                {
+                  red = 150;
+                  green = 190;
+                  blue = 230;
+                  algorithm = "floating";
+                  type = "explicit-lightness";
+                }
+              ];
+              opacity = 0.2;
+              texture = 0.5;
+            };
+          };
         };
 
         pins = {
@@ -66,7 +85,6 @@ in
           "Jira" = {
             id = "fb316d70-2b5e-4c46-bf42-f4e82d635153";
             container = containers.Work.id;
-            workspace = spaces."Hackuity".id;
             url = "https://hackuity.atlassian.net/issues/?filter=-1";
             isEssential = true;
             position = 102;
@@ -75,7 +93,6 @@ in
           "Notion" = {
             id = "8af62707-0722-4049-9801-bedced343333";
             container = containers.Work.id;
-            workspace = spaces."Hackuity".id;
             url = "https://www.notion.so/hackuity";
             isEssential = true;
             position = 103;
@@ -84,7 +101,6 @@ in
           "Dust" = {
             id = "0ac3121a-fcff-4880-a344-fb5e0427951d";
             container = containers.Work.id;
-            workspace = spaces."Hackuity".id;
             url = "https://dust.tt/w/aoBYee1dKf/conversation/new#?selectedTab=favorites";
             isEssential = true;
             position = 104;
@@ -93,7 +109,6 @@ in
           "Github" = {
             id = "efbd1d59-fd11-43a6-9996-c58d8bd30ee5";
             container = containers.Work.id;
-            workspace = spaces."Hackuity".id;
             url = "https://github.com/Hackuity";
             isEssential = true;
             position = 105;
@@ -102,7 +117,6 @@ in
           "Grafana Prod" = {
             id = "c1b87b4b-7b2b-4f74-bdb0-06d42f62e70e";
             container = containers.Work.id;
-            workspace = spaces."Hackuity".id;
             url = "https://grafana.ops.hy.hackuity.io";
             isEssential = true;
             position = 106;
@@ -111,7 +125,6 @@ in
           "Silae" = {
             id = "f63a50cf-8bd3-43e7-b989-409364f37bec";
             container = containers.Work.id;
-            workspace = spaces."Hackuity".id;
             url = "https://rh.silae.fr/login";
             isEssential = false;
             position = 107;
@@ -120,7 +133,6 @@ in
           "Sharepoint" = {
             id = "c5f3be3b-1c55-4630-9812-af1e2055c944";
             container = containers.Work.id;
-            workspace = spaces."Hackuity".id;
             url = "https://hackuity.sharepoint.com/sites/TeamGeneral/Documents%20partages/Forms/AllItems.aspx";
             isEssential = false;
             position = 108;
@@ -129,7 +141,6 @@ in
           "Excel Recup" = {
             id = "7a52f47a-30c6-4a7e-bdf7-ef1c5fef7c91";
             container = containers.Work.id;
-            workspace = spaces."Hackuity".id;
             url = "https://hackuity.sharepoint.com/:x:/r/sites/TeamGeneral/_layouts/15/doc2.aspx?sourcedoc=%7B9C0A107B-F0C7-459E-9F18-665E6403964B%7D";
             isEssential = false;
             position = 109;
@@ -147,8 +158,7 @@ in
           # Folder
           "Nix" = {
             id = "d85a9026-1458-4db6-b115-346746bcc692";
-            container = containers.Work.id;
-            workspace = spaces."Hackuity".id;
+            workspace = spaces.Nix.id;
             isGroup = true;
             isFolderCollapsed = true;
             editedTitle = true;
@@ -157,8 +167,7 @@ in
 
           "Nixpkgs Reference Manual" = {
             id = "f8dd784e-11d7-430a-8f57-7b05ecdb4c77";
-            container = containers.Work.id;
-            workspace = spaces."Hackuity".id;
+            workspace = spaces.Nix.id;
             folderParentId = pins."Nix".id;
             url = "https://nixos.org/manual/nixpkgs/stable/";
             position = 201;
@@ -166,8 +175,7 @@ in
 
           "Home Manager appendix" = {
             id = "92931d60-fd40-4707-9512-a57b1a6a3919";
-            container = containers.Work.id;
-            workspace = spaces."Hackuity".id;
+            workspace = spaces.Nix.id;
             folderParentId = pins."Nix".id;
             url = "https://home-manager.dev/manual/unstable/options.xhtml";
             position = 202;
@@ -175,8 +183,7 @@ in
 
           "Voyager Layout" = {
             id = "2eed5614-3896-41a1-9d0a-a3283985359b";
-            container = containers.Work.id;
-            workspace = spaces."Hackuity".id;
+            workspace = spaces.Nix.id;
             folderParentId = pins."Nix".id;
             url = "https://configure.zsa.io/voyager/layouts/bmGJV/latest/0";
             position = 203;

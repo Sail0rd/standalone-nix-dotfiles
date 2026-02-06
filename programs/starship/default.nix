@@ -3,17 +3,20 @@
   lib,
   config,
   ...
-}: {
+}:
+{
   programs.starship = {
     enable = true;
     settings = {
-      format = let
-        git = "$git_branch$git_commit$git_state$git_status";
-      in ''
-        $username$hostname($cmd_duration) $kubernetes $fill ($nix_shell)
-        $directory(${git}) $fill $time
-        $jobs$character
-      '';
+      format =
+        let
+          git = "$git_branch$git_commit$git_state$git_status";
+        in
+        ''
+          $username$hostname($cmd_duration) $kubernetes $fill ($nix_shell)
+          $directory(${git}) $fill
+          $jobs$character
+        '';
 
       fill = {
         symbol = " ";
@@ -72,10 +75,10 @@
         success_symbol = "  [➡️](bold green)";
       };
 
-      time = {
-        format = "\\[[$time]($style)\\]";
-        disabled = false;
-      };
+      # time = {
+      #   format = "\\[[$time]($style)\\]";
+      #   disabled = false;
+      # };
 
       kubernetes = {
         disabled = false;
