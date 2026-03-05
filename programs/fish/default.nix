@@ -170,6 +170,13 @@
           docker buildx imagetools inspect "$argv[1]" --format "{{json .Manifest}}" | jq -r .digest
         '';
       };
+      k-delete-ns = {
+        body = ''
+          kubectl get namespace "$argv[1]" -o json \
+            | tr -d "\n" | sed "s/\"finalizers\": \[[^]]\+\]/\"finalizers\": []/" \
+            | kubectl replace --raw /api/v1/namespaces/"$argv[1]"/finalize -f -
+        '';
+      };
     };
   };
 }

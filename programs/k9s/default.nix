@@ -10,13 +10,13 @@
         scopes = [ "helmreleases" ];
         description = "Toggle to suspend or resume a HelmRelease";
         command = "bash";
-        background = false;
+        background = true;
         args = [
           "-c"
           ''
             suspended=$(kubectl --context $CONTEXT get helmreleases -n $NAMESPACE $NAME -o=custom-columns=TYPE:.spec.suspend | tail -1);
             verb=$([ $suspended = "true" ] && echo "resume" || echo "suspend");
-            flux $verb helmrelease --context $CONTEXT -n $NAMESPACE $NAME | less -K
+            flux $verb helmrelease --context $CONTEXT -n $NAMESPACE $NAME
           ''
         ];
       };
@@ -100,15 +100,15 @@
 
       reconcile-ks = {
         shortCut = "Shift-R";
-        confirm = false;
+        confirm = true;
         description = "Flux reconcile";
         scopes = [ "kustomizations" ];
         command = "bash";
-        background = false;
+        background = true;
         args = [
           "-c"
           ''
-            flux reconcile kustomization --context $CONTEXT -n $NAMESPACE $NAME | less -K
+            flux reconcile kustomization --context $CONTEXT -n $NAMESPACE $NAME
           ''
         ];
       };
@@ -119,11 +119,11 @@
         description = "Flux reconcile";
         scopes = [ "imagerepositories" ];
         command = "sh";
-        background = false;
+        background = true;
         args = [
           "-c"
           ''
-            flux reconcile image repository --context $CONTEXT -n $NAMESPACE $NAME | less -K
+            flux reconcile image repository --context $CONTEXT -n $NAMESPACE $NAME
           ''
         ];
       };
@@ -134,11 +134,11 @@
         description = "Flux reconcile";
         scopes = [ "imageupdateautomations" ];
         command = "sh";
-        background = false;
+        background = true;
         args = [
           "-c"
           ''
-            flux reconcile image update --context $CONTEXT -n $NAMESPACE $NAME | less -K
+            flux reconcile image update --context $CONTEXT -n $NAMESPACE $NAME
           ''
         ];
       };
