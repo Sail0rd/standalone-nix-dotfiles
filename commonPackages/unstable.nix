@@ -59,6 +59,8 @@ with pkgs;
   kubectl-view-allocations # kubectl view for k8s resource allocations
   kubectl-evict-pod # pod eviction for k8s
   kubectl-df-pv
+  kubecolor
+  checkov
   kubectx
   kubesec
   kubeconform

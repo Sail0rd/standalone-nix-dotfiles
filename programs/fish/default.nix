@@ -31,95 +31,96 @@
 
       # Kube
       # Other
-      k = "kubectl";
-      kpf = "kubectl port-forward";
-      klo = "kubectl logs -f";
+      k = "kubecolor";
+      kpf = "kubecolor port-forward";
+      klo = "kubecolor logs -f";
       # Get
-      kg = "kubectl get";
-      kgns = "kubectl get ns";
-      kgp = "kubectl get pods";
-      kgs = "kubectl get secrets";
-      kgd = "kubectl get deploy";
-      kgrs = "kubectl get rs";
-      kgss = "kubectl get sts";
-      kgds = "kubectl get ds";
-      kgcm = "kubectl get configmap";
-      kgcj = "kubectl get cronjob";
-      kgj = "kubectl get job";
-      kgsvc = "kubectl get svc -o wide";
-      kgn = "kubectl get no -o wide";
-      kgins = "kubectl get ingress";
-      kgr = "kubectl get roles";
-      kgrb = "kubectl get rolebindings";
-      kgcr = "kubectl get clusterroles";
-      kgcrb = "kubectl get clusterrolebindings";
-      kgsa = "kubectl get sa";
-      kgnp = "kubectl get netpol";
+      kg = "kubecolor get";
+      kgns = "kubecolor get ns";
+      kgp = "kubecolor get pods";
+      kgs = "kubecolor get secrets";
+      kgd = "kubecolor get deploy";
+      kgrs = "kubecolor get rs";
+      kgss = "kubecolor get sts";
+      kgds = "kubecolor get ds";
+      kgcm = "kubecolor get configmap";
+      kgcj = "kubecolor get cronjob";
+      kgj = "kubecolor get job";
+      kgsvc = "kubecolor get svc -o wide";
+      kgn = "kubecolor get no -o wide";
+      kgins = "kubecolor get ingress";
+      kgr = "kubecolor get roles";
+      kgrb = "kubecolor get rolebindings";
+      kgcr = "kubecolor get clusterroles";
+      kgcrb = "kubecolor get clusterrolebindings";
+      kgsa = "kubecolor get sa";
+      kgnp = "kubecolor get netpol";
       # Edit
-      ke = "kubectl edit";
-      kens = "kubectl edit ns";
-      kes = "kubectl edit secrets";
-      ked = "kubectl edit deploy";
-      kers = "kubectl edit rs";
-      kess = "kubectl edit sts";
-      keds = "kubectl edit ds";
-      kesvc = "kubectl edit svc";
-      kecm = "kubectl edit cm";
-      kecj = "kubectl edit cj";
-      ker = "kubectl edit roles";
-      kecr = "kubectl edit clusterroles";
-      kerb = "kubectl edit clusterrolebindings";
-      kesa = "kubectl edit sa";
-      kenp = "kubectl edit netpol";
+      ke = "kubecolor edit";
+      kens = "kubecolor edit ns";
+      kes = "kubecolor edit secrets";
+      ked = "kubecolor edit deploy";
+      kers = "kubecolor edit rs";
+      kess = "kubecolor edit sts";
+      keds = "kubecolor edit ds";
+      kesvc = "kubecolor edit svc";
+      kecm = "kubecolor edit cm";
+      kecj = "kubecolor edit cj";
+      ker = "kubecolor edit roles";
+      kecr = "kubecolor edit clusterroles";
+      kerb = "kubecolor edit clusterrolebindings";
+      kesa = "kubecolor edit sa";
+      kenp = "kubecolor edit netpol";
       # Describe
-      kd = "kubectl describe";
-      kdns = "kubectl describe ns";
-      kdp = "kubectl describe pod";
-      kds = "kubectl describe secrets";
-      kdd = "kubectl describe deploy";
-      kdrs = "kubectl describe rs";
-      kdss = "kubectl describe sts";
-      kdds = "kubectl describe ds";
-      kdsvc = "kubectl describe svc";
-      kdcm = "kubectl describe cm";
-      kdcj = "kubectl describe cj";
-      kdj = "kubectl describe job";
-      kdsa = "kubectl describe sa";
-      kdr = "kubectl describe roles";
-      kdrb = "kubectl describe rolebindings";
-      kdcr = "kubectl describe clusterroles";
-      kdcrb = "kubectl describe clusterrolebindings";
-      kdnp = "kubectl describe netpol";
+      kd = "kubecolor describe";
+      kdns = "kubecolor describe ns";
+      kdp = "kubecolor describe pod";
+      kds = "kubecolor describe secrets";
+      kdd = "kubecolor describe deploy";
+      kdrs = "kubecolor describe rs";
+      kdss = "kubecolor describe sts";
+      kdds = "kubecolor describe ds";
+      kdsvc = "kubecolor describe svc";
+      kdcm = "kubecolor describe cm";
+      kdcj = "kubecolor describe cj";
+      kdj = "kubecolor describe job";
+      kdsa = "kubecolor describe sa";
+      kdr = "kubecolor describe roles";
+      kdrb = "kubecolor describe rolebindings";
+      kdcr = "kubecolor describe clusterroles";
+      kdcrb = "kubecolor describe clusterrolebindings";
+      kdnp = "kubecolor describe netpol";
       # Delete
-      kdel = "kubectl delete";
-      kdelns = "kubectl delete ns";
-      kdels = "kubectl delete secrets";
-      kdelp = "kubectl delete po";
-      kdeld = "kubectl delete deployment";
-      kdelrs = "kubectl delete rs";
-      kdelss = "kubectl delete sts";
-      kdelds = "kubectl delete ds";
-      kdelsvc = "kubectl delete svc";
-      kdelcm = "kubectl delete cm";
-      kdelcj = "kubectl delete cj";
-      kdelj = "kubectl delete job";
-      kdelr = "kubectl delete roles";
-      kdelrb = "kubectl delete rolebindings";
-      kdelcr = "kubectl delete clusterroles";
-      kdelcrb = "kubectl delete clusterrolebindings";
-      kdelsa = "kubectl delete sa";
-      kdelnp = "kubectl delete netpol";
+      kdel = "kubecolor delete";
+      kdelns = "kubecolor delete ns";
+      kdels = "kubecolor delete secrets";
+      kdelp = "kubecolor delete po";
+      kdeld = "kubecolor delete deployment";
+      kdelrs = "kubecolor delete rs";
+      kdelss = "kubecolor delete sts";
+      kdelds = "kubecolor delete ds";
+      kdelsvc = "kubecolor delete svc";
+      kdelcm = "kubecolor delete cm";
+      kdelcj = "kubecolor delete cj";
+      kdelj = "kubecolor delete job";
+      kdelr = "kubecolor delete roles";
+      kdelrb = "kubecolor delete rolebindings";
+      kdelcr = "kubecolor delete clusterroles";
+      kdelcrb = "kubecolor delete clusterrolebindings";
+      kdelsa = "kubecolor delete sa";
+      kdelnp = "kubecolor delete netpol";
       # Config
-      kcfg = "kubectl config";
-      kcfgv = "kubectl config view";
-      kcfgns = "kubectl config set-context --current --namespace";
-      kcfgcurrent = "kubectl config current-context";
-      kcfggc = "kubectl config get-contexts";
-      kcfgsc = "kubectl config set-context";
-      kcfguc = "kubectl config use-context";
+      kcfg = "kubecolor config";
+      kcfgv = "kubecolor config view";
+      kcfgns = "kubecolor config set-context --current --namespace";
+      kcfgcurrent = "kubecolor config current-context";
+      kcfggc = "kubecolor config get-contexts";
+      kcfgsc = "kubecolor config set-context";
+      kcfguc = "kubecolor config use-context";
 
       kns = "kubens";
       kc = "kubectx";
+      knet = "kubectl run tmp-shell --rm -i --tty --overrides='{\"spec\": {\"hostNetwork\": true}}'  --image nicolaka/netshoot";
       # kc = "kconf";
 
       # Other
@@ -172,9 +173,9 @@
       };
       k-delete-ns = {
         body = ''
-          kubectl get namespace "$argv[1]" -o json \
+          kubecolor get namespace "$argv[1]" -o json \
             | tr -d "\n" | sed "s/\"finalizers\": \[[^]]\+\]/\"finalizers\": []/" \
-            | kubectl replace --raw /api/v1/namespaces/"$argv[1]"/finalize -f -
+            | kubecolor replace --raw /api/v1/namespaces/"$argv[1]"/finalize -f -
         '';
       };
     };

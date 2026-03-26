@@ -18,23 +18,23 @@ with pkgs;
       treesitter = {
         highlight.enable = false;
       };
-      none-ls = {
-        sources = {
-          diagnostics.sqruff = {
-            enable = true;
-            settings = {
-              extra_args = [
-                "--dialect"
-                "postgres"
-              ];
-            };
-          };
-          # formatting = {
-          #   shfmt.enable = false;
-          #   terraform_fmt.enable = false;
-          # };
-        };
-      };
+      # none-ls = {
+      #   sources = {
+      #     diagnostics.sqruff = {
+      #       enable = true;
+      #       settings = {
+      #         extra_args = [
+      #           "--dialect"
+      #           "postgres"
+      #         ];
+      #       };
+      #     };
+      #     formatting = {
+      #       shfmt.enable = false;
+      #       terraform_fmt.enable = false;
+      #     };
+      #   };
+      # };
       # copilot-vim = {
       #   enable = true;
       #   settings.filetypes = {

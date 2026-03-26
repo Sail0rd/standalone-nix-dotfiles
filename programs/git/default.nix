@@ -25,10 +25,16 @@
     };
 
     settings = {
+      alias = {
+        # Better log
+        l = "log --graph --pretty='%Cred%h%Creset - %C(bold blue)<%an>%Creset %s%C(yellow)%d%Creset %Cgreen(%cr)' --abbrev-commit --date=relative";
+        adog = "log --all --decorate --oneline --graph";
+      };
       user = {
         email = "${email}";
         name = "${user}";
       };
+      pull.rebase = true;
       push = {
         default = "current";
         autoSetupRemote = true;
