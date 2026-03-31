@@ -31,7 +31,6 @@ in
     ../../modules/home-manager/fonts.nix # Font configuration
     ../../modules/home-manager/nixGL.nix # NixGL configuration
 
-    # ../../programs/jeezyvim # Neovim portable configuration
     ../../programs/atuin # shell history synchronization
     ../../programs/alacritty # Alacritty terminal configuration
     ../../programs/k9s # K9s kubernetes visualizer configuration
@@ -49,7 +48,7 @@ in
     # ../../programs/swaylock # (fancy) Swaylock configuration WARN: Does not work
     ../../programs/taskwarrior # Taskwarrior configuration
     ../../programs/tmux # Tmux configuration
-    # ../../programs/zathura # Zathura pdf viewer
+    ../../programs/zathura # Zathura pdf viewer
     ../../programs/zoxide # Zoxide configuration
     ../../programs/zen-browser # Zen web browser
 

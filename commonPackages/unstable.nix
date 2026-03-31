@@ -70,6 +70,7 @@ with pkgs;
   age
 
   # Test / Fun
+  gh-dash # GitHub TUI dashboard
   kcl # Kubernetes Configuration Language
   jujutsu # easier git
   opentofu # opensource terraform

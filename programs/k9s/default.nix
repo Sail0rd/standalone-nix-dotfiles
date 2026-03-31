@@ -4,6 +4,26 @@
     enable = true;
     package = pkgs.k9s;
     plugins = {
+      open-logs = {
+        shortCut = "Shift-L";
+        confirm = false;
+        scopes = [
+          "po"
+          "deploy"
+          "ds"
+          "sts"
+        ];
+        description = "Open logs in lnav";
+        command = "bash";
+        background = false;
+        args = [
+          "-c"
+          ''
+            lnav -e "kubectl logs -f $NAME -n $NAMESPACE --context $CONTEXT"
+          ''
+        ];
+      };
+
       toggle-helmrelease = {
         shortCut = "Shift-T";
         confirm = true;
@@ -27,7 +47,7 @@
         scopes = [ "kustomizations" ];
         description = "Toggle to suspend or resume a Kustomization";
         command = "bash";
-        background = false;
+        background = true;
         args = [
           "-c"
           ''
@@ -183,7 +203,7 @@
         description = "Flux reconcile";
         scopes = [ "resourcesets" ];
         command = "bash";
-        background = false;
+        background = true;
         args = [
           "-c"
           ''
