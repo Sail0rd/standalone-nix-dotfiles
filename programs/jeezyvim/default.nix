@@ -5,16 +5,16 @@ with pkgs;
     # clipboard.providers.xclip.enable = true;
     clipboard.providers.wl-copy.enable = true;
     plugins = {
-      # vimtex = {
-      #   enable = true;
-      #   texlivePackage = pkgs.texliveFull;
-      #   settings = {
-      #     view_method = "zathura";
-      #     compiler_latexmk_engines = {
-      #       "_" = "-xelatex";
-      #     };
-      #   };
-      # };
+      vimtex = {
+        enable = true;
+        texlivePackage = pkgs.texliveFull;
+        settings = {
+          view_method = "zathura";
+          compiler_latexmk_engines = {
+            "_" = "-xelatex";
+          };
+        };
+      };
       treesitter = {
         highlight.enable = false;
       };

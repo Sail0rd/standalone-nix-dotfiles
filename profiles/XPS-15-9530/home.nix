@@ -48,6 +48,7 @@ in
     # ../../programs/swaylock # (fancy) Swaylock configuration WARN: Does not work
     ../../programs/taskwarrior # Taskwarrior configuration
     ../../programs/tmux # Tmux configuration
+    ../../programs/slack # Slack
     ../../programs/zathura # Zathura pdf viewer
     ../../programs/zoxide # Zoxide configuration
     ../../programs/zen-browser # Zen web browser
@@ -83,13 +84,13 @@ in
       height = 1200;
       workspace = "1";
       primary = true;
-      x = 1920;
+      x = 2560;
       y = 1080;
     }
     {
       name = "DP-2";
-      width = 1920;
-      height = 1080;
+      width = 2560;
+      height = 1440;
       workspace = "2";
       primary = false;
       x = 0;
@@ -101,7 +102,7 @@ in
       height = 1080;
       workspace = "3";
       primary = false;
-      x = 1920;
+      x = 2560;
       y = 0;
     }
   ];

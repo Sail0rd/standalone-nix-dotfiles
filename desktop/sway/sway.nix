@@ -113,6 +113,7 @@ in
           # Applications
           "${mod}+Return" = "exec ${kittyCmd}";
           "${mod}+d" = "exec ${dmenu}";
+          "${mod}+c" = "exec ${colorPicker}";
           "Print" = "exec ${screenshot}";
           "${mod}+Shift+s" = "exec ${screenshot}";
           # "${mod}+Shift+s" = "exec ${flameshotCmd} gui";
