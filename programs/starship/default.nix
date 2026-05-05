@@ -15,7 +15,7 @@
         ''
           $username$hostname($cmd_duration) $kubernetes $fill ($nix_shell)
           $directory(${git}) $fill
-          $jobs$character
+          $jobs$character$status
         '';
 
       fill = {
@@ -32,15 +32,15 @@
       };
 
       git_status = {
-        conflicted = "⚔️ ";
-        diverged = "🔱";
-        untracked = "🔎";
-        ahead = "⏫";
-        behind = "⏬";
-        modified = "📝";
-        staged = "📂";
-        renamed = "🔄";
-        deleted = "✘";
+        conflicted = "═";
+        diverged = " ";
+        untracked = " ";
+        ahead = " ";
+        behind = " ";
+        modified = " ";
+        staged = " ";
+        renamed = " ";
+        deleted = " ";
         style = "bright-white";
       };
 
@@ -70,15 +70,17 @@
         style = "bold blue";
       };
 
-      character = {
-        error_symbol = "  [⚠ ](bold red)";
-        success_symbol = "  [➡️](bold green)";
+      status = {
+        disabled = false;
+        format = "[$status]($style) ";
+        style = "bold red";
       };
 
-      # time = {
-      #   format = "\\[[$time]($style)\\]";
-      #   disabled = false;
-      # };
+      character = {
+        # This makes the NixOS icon always blue, but the arrow green/red
+        success_symbol = "[ ](bold blue)[ 󱦰](bold green) ";
+        error_symbol = "[ ](bold blue)[ 󰅚](bold red) ";
+      };
 
       kubernetes = {
         disabled = false;
@@ -114,4 +116,5 @@
       terraform.symbol = "󱁢";
     };
   };
+
 }
