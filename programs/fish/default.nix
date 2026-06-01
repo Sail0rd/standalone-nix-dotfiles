@@ -11,7 +11,7 @@
     enable = true;
     interactiveShellInit = ''
       fish_vi_key_bindings &&
-      ${pkgs.starship}/bin/starship init fish | source
+      eval (/home/mathis/Desktop/toolkits/hackuity-infra-utils/scripts/init.sh exec)
     ''
     + lib.strings.optionalString config.programs.taskwarrior.enable ''
       task list
@@ -176,6 +176,12 @@
           kubecolor get namespace "$argv[1]" -o json \
             | tr -d "\n" | sed "s/\"finalizers\": \[[^]]\+\]/\"finalizers\": []/" \
             | kubecolor replace --raw /api/v1/namespaces/"$argv[1]"/finalize -f -
+        '';
+      };
+      k-not-ready = {
+        body = ''
+          set ctx (string length -- "$argv[1]" > /dev/null 2>&1; and echo "$argv[1]"; or kubectl config current-context)
+          watch -n 2 "kubectl --context=$ctx get pods -A --no-headers | awk '{split(\$3,a,\"/\"); if(a[1]!=a[2] && \$4!~/Completed|Succeeded/) print}'"
         '';
       };
     };

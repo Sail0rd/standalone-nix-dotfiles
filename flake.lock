@@ -515,11 +515,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1774516492,
-        "narHash": "sha256-io2FLVFq5ngTy6D3M2o+7PJqL+M6POI/ZN7g0rWU6IM=",
+        "lastModified": 1779721535,
+        "narHash": "sha256-aNyEUWu81Tgk/XZ/ebO2V2uydn2WxOEPMeg6v5x9rfQ=",
         "owner": "Sail0rd",
         "repo": "JeezyVim",
-        "rev": "77a3fff53d0e2f454d705fd7345c805910cd7cba",
+        "rev": "9aee4216584b8c60e8fb218d38a391540525f2e5",
         "type": "github"
       },
       "original": {

@@ -5,6 +5,8 @@ with pkgs;
     # clipboard.providers.xclip.enable = true;
     clipboard.providers.wl-copy.enable = true;
     plugins = {
+      render-markdown.enable = true;
+      markdown-preview.enable = true;
       vimtex = {
         enable = true;
         texlivePackage = pkgs.texliveFull;

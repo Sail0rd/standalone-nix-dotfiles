@@ -100,6 +100,30 @@
 
     in
     {
+      packages.kanata = pkgs.rustPlatform.buildRustPackage {
+        pname = "kanata";
+        version = "1.11.0";
+
+        src = pkgs.fetchFromGitHub {
+          owner = "jtroo";
+          repo = "kanata";
+          rev = "v1.11.0";
+          hash = "sha256-7rGV0nfI/ntvByz3NQs/2Sa2q/Ml8O3XRD14Mbt5fIU=";
+        };
+
+        cargoHash = "sha256-Qxa90fMZ3c1+jlyxbIkC94DtSQSKFNr2V8GiLII6PNc=";
+
+        nativeBuildInputs = with pkgs; [
+          pkg-config
+        ];
+
+        buildInputs =
+          with pkgs;
+          lib.optionals stdenv.isLinux [
+            libevdev
+          ];
+      };
+
       homeConfigurations = {
         "XPS-15-9530" = mkHomeConfiguration {
           hostname = "XPS-15-9530";

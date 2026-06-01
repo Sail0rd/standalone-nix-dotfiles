@@ -56,6 +56,7 @@ in
     ../../packages/helm.nix
 
     ../../services/podman # Podman configuration
+    ../../services/kanata # keyboard configuration
     # ../../services/trackwarrior # trackwarrior configuration
   ];
 
