@@ -3,7 +3,7 @@
 (deflayer base
   _    _    _    _    _    _    _    _    _    _    _
   q    w    e    r    t         y    u    i    o    p
-  a    @ss  @dd  @ff  g         h    @jj  @kk  @ll  ;
+  @aa    @ss  @dd  @ff  g         h    @jj  @kk  @ll  @mm
   z    x    c    v    b    <    n    m    ,    .    /
             @sft          @nav            @sym
 )
@@ -20,12 +20,14 @@
   sym (tap-hold-press $tap_timeout $hold_timeout ret (layer-while-held symbols))
 
   ;; Home-row mods
+  aa (tap-hold $tap_timeout $long_hold_timeout a lsft)
   ss (tap-hold $tap_timeout $long_hold_timeout s lmet)
   dd (tap-hold $tap_timeout $long_hold_timeout d lctl)
   ff (tap-hold $tap_timeout $long_hold_timeout f lalt)
   jj (tap-hold $tap_timeout $long_hold_timeout j lalt)
   kk (tap-hold $tap_timeout $long_hold_timeout k rctl)
   ll (tap-hold $tap_timeout $long_hold_timeout l rmet)
+  mm (tap-hold $tap_timeout $long_hold_timeout ; lsft)
 )
 
 ;; vim: set ft=lisp
